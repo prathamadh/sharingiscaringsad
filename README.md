@@ -1,1 +1,77 @@
-# sharingiscaringsad
+class _ShomeState extends State<Shome> {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          UserAccountsDrawerHeader(accountName: Text('Pratham'), accountEmail: Text('apratham489@gmail.com'),
+          currentAccountPicture: CircleAvatar(
+            child: ClipOval(
+              child: Image.asset('assets/photo.png',fit: BoxFit.cover,
+              width: 90,
+              height: 90,),
+
+            ),
+
+          ),
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage('assets/background.jpg'),fit: BoxFit.cover)
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.favorite),
+            title: Text('Favourites'),
+            onTap: (){
+              //code on tap
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.people),
+            title: Text('Friends'),
+            onTap: (){
+              
+              //code on tap
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.contact_phone_outlined),
+            title: Text('Contact Us'),
+            onTap: (){
+              showDialog(context: context, builder: (context){
+                return Center(
+
+
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    color: Colors.deepOrange,
+                    child: SizedBox(child: Text('Email us at apratham488@gmail.com'),
+                    height: 300,
+                    width: 300,),
+                  ),
+
+
+                );
+                    });
+              })
+              //code on tap,
+          ,
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Settings'),
+            onTap: (){
+              //code on tap
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Exit'),
+            onTap: (){
+              //code on tap
+            },
+          ),
+
+        ],
+      ),
+    );
+  }
+}
